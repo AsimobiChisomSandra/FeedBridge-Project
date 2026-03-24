@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available Food - FeedBridge</title>
+  <link rel="stylesheet" href="../feedbridge.css/available-food.css">
+</head>
+<body>
+  <header class="nav-header">
+    <div class="nav-container">
+      <h1 class="nav-logo">Feed<span>Bridge</span></h1>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./listing.html">List Food</a>
+        <a href="./ai-checker.html">AI Food Checker</a>
+        <a href="./dashboard.html">Impact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="available-container">
+    <section class="available-hero">
+      <h1>Available Food Near You</h1>
+      <p>Browse surplus food from verified donors</p>
+    </section>
+
+    <section class="filters">
+      <input type="text" id="searchFilter" placeholder="Search by food type, location..." class="search-input">
+      <select id="safetyFilter" class="filter-select">
+        <option value="">All Safety Status</option>
+        <option value="safe">✓ Safe to Eat</option>
+        <option value="caution">⚠️ Consume with Caution</option>
+      </select>
+    </section>
+
+    <section class="food-feed" id="foodFeed">
+      <!-- Food listings will be loaded here from localStorage -->
+    </section>
+  </main>
+
+  <script src="../feedbridge.js/available-food.js"></script>
+</body>
+</html>

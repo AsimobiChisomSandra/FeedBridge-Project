@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipient Dashboard - FeedBridge</title>
+  <link rel="stylesheet" href="../feedbridge.css/recipient-dashboard.css">
+</head>
+<body>
+  <header class="nav-header">
+    <div class="nav-container">
+      <h1 class="nav-logo">Feed<span>Bridge</span></h1>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./available-food.html">Available Food</a>
+        <a href="./dashboard.html">Impact</a>
+        <a href="./login.html" class="logout-btn">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="recipient-container">
+    <section class="recipient-hero">
+      <h1>Welcome, Community Member</h1>
+      <p>Browse available food and claim what you need</p>
+    </section>
+
+    <section class="recipient-stats">
+      <div class="stat-card">
+        <h3>My Claims</h3>
+        <p class="stat-number" id="myClaimsCount">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Meals Received</h3>
+        <p class="stat-number" id="mealsReceivedCount">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Upcoming Pickups</h3>
+        <p class="stat-number" id="upcomingPickups">0</p>
+      </div>
+    </section>
+
+    <section class="recipient-content">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="available">🍱 Available Food</button>
+        <button class="tab-btn" data-tab="claimed">✓ My Claimed Food</button>
+        <button class="tab-btn" data-tab="history">📜 History</button>
+      </div>
+
+      <!-- Tab 1: Available Food -->
+      <div class="tab-content active" id="available-tab">
+        <div class="filters">
+          <input type="text" id="recipientSearch" placeholder="Search by food type, location..." class="search-input">
+          <select id="recipientSafetyFilter" class="filter-select">
+            <option value="">All Safety Status</option>
+            <option value="safe">✓ Safe to Eat</option>
+            <option value="caution">⚠️ Consume with Caution</option>
+          </select>
+        </div>
+        <div class="food-feed" id="recipientFoodFeed"></div>
+      </div>
+
+      <!-- Tab 2: My Claimed Food -->
+      <div class="tab-content" id="claimed-tab">
+        <div class="claimed-list" id="claimedList"></div>
+      </div>
+
+      <!-- Tab 3: History -->
+      <div class="tab-content" id="history-tab">
+        <div class="history-list" id="historyList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../feedbridge.js/recipient-dashboard.js"></script>
+</body>
+</html>

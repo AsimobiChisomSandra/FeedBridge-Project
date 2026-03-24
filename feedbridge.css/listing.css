@@ -1,0 +1,357 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 80.5%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+/* ===== NAVIGATION ===== */
+.nav-header {
+  background-color: #1a1a1a;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.nav-logo {
+  color: rgb(26, 228, 26);
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-logo span {
+  color: orangered;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: rgb(26, 228, 26);
+}
+
+/* ===== MAIN CONTAINER ===== */
+.listing-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.listing-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.listing-hero h1 {
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.listing-hero p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* ===== FORM SECTION ===== */
+.listing-form-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.listing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.form-section legend {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: rgb(26, 228, 26);
+  padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== FORM GROUPS ===== */
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="datetime-local"],
+.form-group select,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  transition: all 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="datetime-local"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgb(26, 228, 26);
+  box-shadow: 0 0 0 3px rgba(26, 228, 26, 0.1);
+}
+
+.form-group input.input-error {
+  border-color: #f44336;
+  background-color: #ffebee;
+}
+
+.help-text {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 0.3rem;
+}
+
+.warning {
+  background-color: #fff3e0;
+  color: #e65100;
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  border-left: 3px solid #ff9800;
+}
+
+/* ===== CHECKBOX GROUP ===== */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.3rem;
+  cursor: pointer;
+  accent-color: rgb(26, 228, 26);
+}
+
+.checkbox-group label {
+  margin: 0;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+/* ===== CHECKBOX LIST ===== */
+.checkbox-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkbox-list input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+  accent-color: rgb(26, 228, 26);
+}
+
+/* ===== AI PREFILLED DATA ===== */
+.ai-prefilled-box {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f0fff0 100%);
+  border-left: 4px solid rgb(26, 228, 26);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ai-prefilled-box h4 {
+  color: rgb(26, 228, 26);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.ai-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ai-result-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 3px solid rgb(26, 228, 26);
+}
+
+.ai-result-item strong {
+  display: block;
+  color: #666;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.ai-result-item p {
+  color: #1a1a1a;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ===== AI HELP BOX ===== */
+.ai-help-box {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.ai-help-box p {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn--green {
+  background-color: rgb(26, 228, 26);
+  color: white;
+}
+
+.btn--green:hover {
+  background-color: rgb(16, 153, 16);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 228, 26, 0.3);
+}
+
+.btn--green:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(26, 228, 26, 0.3);
+}
+
+.btn--secondary {
+  background-color: #e0e0e0;
+  color: #1a1a1a;
+}
+
+.btn--secondary:hover {
+  background-color: #d0d0d0;
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1.2rem !important;
+  font-size: 1.1rem !important;
+  margin-top: 1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .listing-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .checkbox-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .listing-form-section {
+    padding: 1rem;
+  }
+
+  .btn-submit {
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+}
