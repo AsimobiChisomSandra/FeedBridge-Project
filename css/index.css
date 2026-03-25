@@ -10,20 +10,19 @@ html{
   font-size: 80.5%;
 }
 
-
 body{
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
 }
 
 .body-header{
-  background: url(../assets/onboarding\ img.png);
+  background: url(/assets/onboarding\ img.png);     
   height: 95vh;
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0.6)
-  ), url(../assets/onboarding\ img.png);
+  ), url(/assets/onboarding\ img.png);
   background-size: cover;
   position: relative;
   object-fit: cover;
@@ -35,10 +34,6 @@ body{
   top: 2rem;
   left: 4rem;
 }
-
-/* .body-header--logo{
-   height: 10.5rem;
-} */
 
 .body-header--logo-div h1{
   color: rgb(26, 228, 26);
@@ -103,7 +98,6 @@ body{
   background-color: rgb(16, 153, 16);
   transform: translateY(-2px);
 }
-
 
 .header__text-box{
   position: absolute;
@@ -238,7 +232,7 @@ body{
 }
 
 .btn--animated{
-  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation: moveInBottom 0.5s ease-out 0.75s;        
   animation-fill-mode: backwards;
 }
 
@@ -249,7 +243,7 @@ body{
 }
 
 #startNowBtn {
-  background-color: rgb(26, 228, 26) !important;
+  background-color: rgb(26, 228, 26) !important;      
   color: white !important;
   border: none !important;
   padding: 1.5rem 4rem !important;
@@ -265,9 +259,9 @@ body{
 }
 
 #startNowBtn:hover {
-  background-color: rgb(16, 153, 16) !important;
+  background-color: rgb(16, 153, 16) !important;      
   transform: translateY(-6px) !important;
-  box-shadow: 0 1rem 2rem rgba(0,0,0,.2) !important;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2) !important;  
 }
 
 .role-dropdown {
@@ -346,27 +340,265 @@ body{
   color: #666;
 }
 
+/* ============================================
+   MOBILE ONLY CHANGES (Keep Desktop 100%)
+   ============================================ */
+
+@media (max-width: 1024px) {
+  /* Tablet & Below - Start adjusting */
+  .body-header--logo-div {
+    top: 1.5rem;
+    left: 2rem;
+  }
+
+  .body-header--login-div {
+    top: 1.5rem;
+    right: 1rem;
+    gap: 0.5rem;
+  }
+
+  .body-header--login-div a {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* TABLET VIEW - Minimal Changes */
+  html {
+    font-size: 75%;
+  }
+
+  .body-header--logo-div {
+    top: 1rem;
+    left: 1.5rem;
+  }
+
+  .body-header--logo-div h1 {
+    font-size: 1.8rem;
+  }
+
+  .body-header--logo-div p {
+    font-size: 1rem;
+  }
+
+  .body-header--login-div {
+    top: 1rem;
+    right: 1rem;
+    margin: 0;
+  }
+
+  .body-header--login-div a {
+    font-size: 0.95rem;
+    margin-left: 0.5rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .header__text-box {
+    top: 45%;
+    left: 15%;
+    margin: 0;
+  }
+
   .heading-primary--main,
   .heading-primary--sub {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .header__text-box p {
+    font-size: 1.2rem;
     width: auto;
-    font-size: 1.3rem;
+    max-width: 90%;
   }
 
-  .btn, #startNowBtn {
-    padding: 1rem 2rem !important;
+  #startNowBtn {
+    padding: 1.2rem 3rem !important;
     font-size: 1rem !important;
     bottom: 2rem !important;
     left: -5rem !important;
-    margin-top: 5rem !important;
+    margin-top: 6rem !important;
   }
 
   .role-dropdown {
     left: -5rem !important;
     min-width: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* MOBILE VIEW - Major Responsive Changes (Keep Desktop Structure) */
+  html {
+    font-size: 65%;
+  }
+
+  /* POSITION LOGO AND BUTTONS TO CENTER ON MOBILE */
+  .body-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .body-header--logo-div {
+    position: static;
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+    order: 1;
+  }
+
+  .body-header--logo-div h1 {
+    font-size: 2rem;
+  }
+
+  .body-header--logo-div p {
+    font-size: 1rem;
+  }
+
+  /* CENTER LOGIN/BROWSE BUTTONS */
+  .body-header--login-div {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 2rem;
+    margin-top: 0;
+    order: 2;
+  }
+
+  .body-header--login-div a {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    margin-left: 0;
+    padding: 0.8rem 1.5rem;
+  }
+
+  /* CENTER MAIN CONTENT */
+  .header__text-box {
+    position: static;
+    transform: none;
+    top: auto;
+    left: auto;
+    margin: 2rem 0 0 0;
+    text-align: center;
+    justify-content: center;
+    order: 3;
+  }
+
+  .heading-primary {
+    margin-top: 0;
+  }
+
+  .heading-primary--main {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .heading-primary--sub {
+    font-size: 1.8rem;
+  }
+
+  .header__text-box p {
+    font-size: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  /* CENTER START BUTTON */
+  #startNowBtn {
+    position: relative !important;
+    padding: 1rem 2rem !important;
+    font-size: 0.95rem !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin-top: 2rem !important;
+    margin: 2rem auto 0 !important;
+    display: block !important;
+  }
+
+  /* CENTER DROPDOWN */
+  .role-dropdown {
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%);
+    min-width: 250px;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* SMALL MOBILE */
+  html {
+    font-size: 60%;
+  }
+
+  .heading-primary--main,
+  .heading-primary--sub {
+    font-size: 1.6rem;
+  }
+
+  .header__text-box p {
+    font-size: 0.95rem;
+  }
+
+  .body-header--logo-div h1 {
+    font-size: 1.8rem;
+  }
+
+  .body-header--login-div {
+    max-width: 280px;
+  }
+
+  #startNowBtn {
+    padding: 0.9rem 1.8rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .role-dropdown {
+    min-width: 220px;
+  }
+
+  .role-option {
+    padding: 1rem;
+  }
+
+  .role-icon {
+    font-size: 1.8rem;
+    margin-right: 0.8rem;
+  }
+
+  .role-option strong {
+    font-size: 0.95rem;
+  }
+
+  .role-option small {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  /* ULTRA SMALL PHONES */
+  html {
+    font-size: 55%;
+  }
+
+  .heading-primary--main,
+  .heading-primary--sub {
+    font-size: 1.4rem;
+  }
+
+  .body-header--logo-div h1 {
+    font-size: 1.5rem;
+  }
+
+  #startNowBtn {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.8rem !important;
   }
 }
