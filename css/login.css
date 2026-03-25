@@ -1,0 +1,234 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+  font-size: 80.5%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, rgb(26, 228, 26), orangered);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-box {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-logo {
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(26, 228, 26);
+  margin-bottom: 0.5rem;
+}
+
+.login-logo span {
+  color: orangered;
+}
+
+.login-tagline {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  transition: all 0.3s;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+  outline: none;
+  border-color: rgb(26, 228, 26);
+  box-shadow: 0 0 0 3px rgba(26, 228, 26, 0.1);
+}
+
+.form-group.remember {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group.remember input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+.form-group.remember label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.btn--green {
+  background-color: rgb(26, 228, 26);
+  color: white;
+}
+
+.btn--green:hover {
+  background-color: rgb(16, 153, 16);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(26, 228, 26, 0.3);
+}
+
+.login-divider {
+  text-align: center;
+  color: #999;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.login-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: #ddd;
+}
+
+.login-divider::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: #ddd;
+}
+
+.quick-access {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quick-access p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.quick-btn {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.donor-btn {
+  background-color: #e8f5e9;
+  color: rgb(16, 153, 16);
+  border: 2px solid rgb(26, 228, 26);
+}
+
+.donor-btn:hover {
+  background-color: rgb(26, 228, 26);
+  color: white;
+}
+
+.recipient-btn {
+  background-color: #fff3e0;
+  color: orangered;
+  border: 2px solid orangered;
+}
+
+.recipient-btn:hover {
+  background-color: orangered;
+  color: white;
+}
+
+.signup-link {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.signup-link a {
+  color: rgb(26, 228, 26);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.signup-link a:hover {
+  color: rgb(16, 153, 16);
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 2rem;
+  }
+
+  .login-logo {
+    font-size: 1.5rem;
+  }
+
+  .quick-btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}

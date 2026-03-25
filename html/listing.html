@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Surplus Food - FeedBridge</title>
+  <link rel="stylesheet" href="../css/listing.css">
+</head>
+<body>
+  <header class="nav-header">
+    <div class="nav-container">
+      <h1 class="nav-logo">Feed<span>Bridge</span></h1>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./available-food.html">Available Food</a>
+        <a href="./ai-checker.html">AI Food Checker</a>
+        <a href="./dashboard.html">Impact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="listing-container">
+    <section class="listing-hero">
+      <h1>Share Your Surplus Food</h1>
+      <p>Help reduce food waste and feed hungry families in your community</p>
+    </section>
+
+    <section class="listing-form-section">
+      <form id="foodListingForm" class="listing-form">
+        
+        <!-- SECTION 1: LEGAL PLEDGE -->
+        <fieldset class="form-section">
+          <legend>Legal Pledge</legend>
+          <div class="checkbox-group">
+            <input type="checkbox" id="donorPledge" name="donorPledge" required>
+            <label for="donorPledge">
+              ✓ I confirm that this food was prepared in hygienic conditions, has not been tampered with, and is safe for consumption. <strong>FeedBridge is not liable for misrepresentation.</strong>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- SECTION 2: FOOD SAFETY CHECKLIST -->
+        <fieldset class="form-section">
+          <legend>Food Safety Information</legend>
+
+          <div class="form-group">
+            <label for="preparedTime">When was this food prepared?</label>
+            <input type="datetime-local" id="preparedTime" name="preparedTime" required>
+            <small class="help-text">Food must be prepared within 6 hours</small>
+            <div id="timeWarning" class="warning" style="display: none;">⚠️ Food older than 6 hours cannot be listed</div>
+          </div>
+
+          <div class="form-group">
+            <label for="refrigerated">Storage Condition</label>
+            <select id="refrigerated" name="refrigerated" required>
+              <option value="">-- Select --</option>
+              <option value="yes">Kept in refrigerator</option>
+              <option value="no">Kept at room temperature</option>
+            </select>
+            <div id="refrigerationWarning" class="warning" style="display: none;">⚠️ Unrefrigerated food degrades faster</div>
+          </div>
+
+          <div class="form-group">
+            <label>Allergen Information</label>
+            <div class="checkbox-list">
+              <label><input type="checkbox" name="allergens" value="nuts"> Tree Nuts / Peanuts</label>
+              <label><input type="checkbox" name="allergens" value="dairy"> Dairy / Milk</label>
+              <label><input type="checkbox" name="allergens" value="seafood"> Seafood / Fish</label>
+              <label><input type="checkbox" name="allergens" value="gluten"> Wheat / Gluten</label>
+              <label><input type="checkbox" name="allergens" value="soy"> Soy</label>
+              <label><input type="checkbox" name="allergens" value="none"> ✓ No Common Allergens</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pickupDeadline">Pickup Deadline</label>
+            <input type="datetime-local" id="pickupDeadline" name="pickupDeadline" required>
+            <small class="help-text">Latest time donor can provide pickup (max 4 hours from now)</small>
+            <div id="deadlineWarning" class="warning" style="display: none;">⚠️ Deadline must be within 4 hours</div>
+          </div>
+        </fieldset>
+
+        <!-- SECTION 3: FOOD DETAILS -->
+        <fieldset class="form-section">
+          <legend>Food Information</legend>
+
+          <div class="form-group">
+            <label for="foodType">Type of Food</label>
+            <input type="text" id="foodType" name="foodType" placeholder="e.g., Fried Rice, Jollof Rice, Bread, Vegetables" required>
+            <small class="help-text">Be specific to help recipients</small>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity Available</label>
+            <input type="text" id="quantity" name="quantity" placeholder="e.g., 5kg, 15 servings, 10 loaves" required>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Pickup Location</label>
+            <input type="text" id="location" name="location" placeholder="Full address or landmark" required>
+            <small class="help-text">Be as specific as possible for easy location</small>
+          </div>
+        </fieldset>
+
+        <!-- SECTION 4: DONOR CONTACT -->
+        <fieldset class="form-section">
+          <legend>Your Contact Information</legend>
+
+          <div class="form-group">
+            <label for="donorName">Name / Business Name</label>
+            <input type="text" id="donorName" name="donorName" placeholder="Your name or restaurant name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="donorPhone">Contact Phone Number</label>
+            <input type="tel" id="donorPhone" name="donorPhone" placeholder="+234 XXX XXX XXXX" required>
+            <small class="help-text">Recipients will use this to confirm pickup</small>
+          </div>
+
+          <div class="form-group">
+            <label for="donorEmail">Email (Optional)</label>
+            <input type="email" id="donorEmail" name="donorEmail" placeholder="your@email.com">
+          </div>
+        </fieldset>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="btn btn--green btn-submit">List Food Now</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/listing.js"></script>
+</body>
+</html>
